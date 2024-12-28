@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>All Entries</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>All Entries</h1>
+        </header>
+        
+        <ul class="entries-list">
+            {% for entry in entries %}
+                <li class="entry-item">
+                    <strong>Name:</strong> {{ entry.name }}<br>
+                    <strong>Vehicle Number:</strong> {{ entry.vehicle_no }}<br>
+                    <strong>Mobile Number:</strong> {{ entry.mobile_no }}<br>
+                    <strong>Where to Go:</strong> {{ entry.where_to_go }}<br>
+                    <strong>Purpose:</strong> {{ entry.purpose }}<br>
+                    <strong>Number of Persons:</strong> {{ entry.no_of_persons }}<br>
+                    <strong>Vehicle Type:</strong> {{ entry.vehicle_type }}<br>
+                    <strong>Remark:</strong> {{ entry.remark }}<br>
+                    <strong>Entry Time:</strong> {{ entry.in_time }}<br>
+                    <strong>Exit Time:</strong> {{ entry.out_time if entry.out_time else "N/A" }}<br>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('dashboard') }}" class="dashboard-button"><button>Go to Dashboard</button></a>
+    </div>
+</body>
+</html>

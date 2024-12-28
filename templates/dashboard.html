@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome, {{ username }}!</h1>
+        </header>
+    
+        <div class="dashboard-buttons">
+            <a href="{{ url_for('new_entry') }}" class="dashboard-button"><button>Make New Entry</button></a>
+            <a href="{{ url_for('all_entries') }}" class="dashboard-button"><button>Show All Entries</button></a>
+            <a href="{{ url_for('current_visitors') }}" class="dashboard-button"><button>Show Current Visitors</button></a>
+            <a href="{{ url_for('exit_visitor') }}" class="dashboard-button"><button>Exit Visitor with Mobile</button></a>
+            <a href="{{ url_for('logout') }}" class="logout-button"><button>Logout</button></a>
+        </div>
+    </div>
+</body>
+</html>

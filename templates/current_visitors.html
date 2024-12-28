@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Current Visitors</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Current Visitors</h1>
+        </header>
+        
+        <ul class="visitors-list">
+            {% for visitor in visitors %}
+                <li class="visitor-item">
+                    <strong>Name:</strong> {{ visitor.name }}<br>
+                    <strong>Vehicle Number:</strong> {{ visitor.vehicle_no }}<br>
+                    <strong>Mobile Number:</strong> {{ visitor.mobile_no }}<br>
+                    <strong>Where to Go:</strong> {{ visitor.where_to_go }}<br>
+                    <strong>Purpose:</strong> {{ visitor.purpose }}<br>
+                    <strong>Number of Persons:</strong> {{ visitor.no_of_persons }}<br>
+                    <strong>Vehicle Type:</strong> {{ visitor.vehicle_type }}<br>
+                    <strong>Remark:</strong> {{ visitor.remark }}<br>
+                    <strong>Entry Time:</strong> {{ visitor.in_time }}<br>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('dashboard') }}" class="dashboard-button"><button>Go to Dashboard</button></a>
+    </div>
+</body>
+</html>

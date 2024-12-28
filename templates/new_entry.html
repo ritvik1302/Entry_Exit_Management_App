@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>New Entry</title>
+</head>
+<body>
+    <div class="container">
+        <header><h1>New Entry</h1></header>
+    
+    
+    <form method="post" action="{{ url_for('submit_new_entry') }}" class="guest-form">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="vehicle_no">Vehicle Number:</label>
+            <input type="text" id="vehicle_no" name="vehicle_no">
+        </div>
+
+        <div class="form-group">
+            <label for="mobile_no">Mobile Number:</label>
+            <input type="text" id="mobile_no" name="mobile_no" required>
+        </div>
+
+        <div class="form-group">
+            <label for="where_to_go">Where to Go:</label>
+            <input type="text" id="where_to_go" name="where_to_go" required>
+        </div>
+
+        <div class="form-group">
+            <label for="purpose">Purpose:</label>
+            <input type="text" id="purpose" name="purpose" required>
+        </div>
+
+        <div class="form-group">
+            <label for="no_of_persons">Number of Persons:</label>
+            <input type="number" id="no_of_persons" name="no_of_persons" required>
+        </div>
+
+        <div class="form-group">
+            <label for="vehicle_type">Vehicle Type:</label>
+            <select id="vehicle_type" name="vehicle_type" required>
+                <option value="Bike">Bike</option>
+            <option value="Car">Car</option>
+            <option value="Auto">Auto</option>
+            <option value="Scooty">Scooty</option>
+            <option value="E-Bike">E-Bike</option>
+            <option value="Tempo">Tempo</option>
+            <option value="Pickup">Pickup</option>
+            <option value="Rikshaw">Rikshaw</option>
+            <option value="Taxi-Car">Taxi-Car</option>
+            <option value="Water-Tanker">Water-Tanker</option>
+            <option value="Tractor">Tractor</option>
+            <option value="Truck">Truck</option>
+            <option value="Bus">Bus</option>
+            <option value="Mini_Van">Mini Van</option>
+            <option value="Cycle">Cycle</option>
+            <option value="Walk">Walk</option>
+            <option value="Crane">Crane</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="remark">Remark:</label>
+            <textarea id="remark" name="remark" rows="4" cols="50"></textarea>
+        </div>
+
+        <input type="submit" value="Submit" class="submit-button">
+    </form>
+    </div>
+</body>
+</html>

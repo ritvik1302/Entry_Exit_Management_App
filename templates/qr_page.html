@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Page</title>
+</head>
+<body>
+    <header><h1>QR Code</h1></header>
+    
+    
+    <img src="data:image/png;base64,{{ qr_base64 }}" alt="QR Code">
+    <br>
+    <a href="{{ url_for('dashboard') }}" class="dashboard-button"><button>Go to Dashboard</button></a>
+</body>
+</html>
